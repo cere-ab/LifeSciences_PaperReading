@@ -1,0 +1,59 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+	],
+	"settings": {
+		//"latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+		//"files.autoSave": "afterDelay",
+    	//"files.autoSaveDelay": 5000,
+		"latex-workshop.latex.tools": [
+			{
+				"name": "xelatexmk",
+				"command": "latexmk",
+				"args": [
+					"-xelatex",
+					"-outdir=%DIR_W32%",
+					"%DOC_EXT_W32%"
+				]
+			},
+			{
+				"name": "pdflatex",
+				"command": "pdflatex",
+				"args": [
+				  "-synctex=1",
+				  "-interaction=nonstopmode",
+				  "-file-line-error",
+				  "%DOC%"
+				],
+				"env": {}
+			  },
+			  {
+				"name": "bibtex",
+				"command": "bibtex",
+				"args": [
+				  "%DOCFILE%"
+				],
+				"env": {}
+			  }
+		],
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "xelatexmk",
+				"tools": [
+					"xelatexmk"
+				]
+			},
+			{
+				"name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+				"tools": [
+				  "pdflatex",
+				  "bibtex",
+				  "pdflatex",
+				  "pdflatex"
+				]
+			  }
+		]
+	}
+}
