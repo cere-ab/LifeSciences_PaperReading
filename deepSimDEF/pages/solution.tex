@@ -1,0 +1,95 @@
+\begin{sloppypar*}
+    The proposed solution\cite{deepSimDEFOFCLimpl} sets up a supervised neural 
+    network which takes in GO-term embeddings (\textit{from some other source}),
+    utilizes all sub-ontologies (BP, MF, CC) either individually (\textbf{single
+    channel}) or simultaneously (\textbf{multi channel}) and performs \textit{classification}
+    or \textit{regression} for some downstream biological task, generating learned
+    embeddings in the due course. The main components of the logic presented in 
+    the paper may be visualized through the \textit{mindmap} in Figure \ref{fig:mindmap};
+    wherein, under \textbf{Training Model}, \verb|SCN| means \textit{Single Channel Network}
+    and \verb|MCN| means \textit{Multi-Channel Network}.\hfill\newline
+
+    % \begin{markdown}
+    % \end{markdown}
+    \begin{figure}
+        \centering
+        \includegraphics[width=170mm,scale=1]{mindmap.png}
+        \caption{Mindmap}
+        \label{fig:mindmap}
+    \end{figure}
+
+    Three downstream tasks have been used, where, \textbf{Protein-Protein Interactions}
+    (PPI) has been setup as a \textit{classification} task and \textbf{Gene Expression}
+    (GE) and \textbf{Sequence Homology} (SH) have been setup as \textit{regression} tasks.
+
+    \subsection{Experimental Data}
+        The data for the experimental setup has been acquired from the sources as described below:
+        \begin{enumerate}
+            \item The \textbf{Gene Ontology} information has been downloaded from 
+            \verb|www.geneontology.org/page/download-ontology|
+            \item The term definition texts were enriched using the \textbf{MEDLINE}
+            abstracts downloaded from \verb|www.nlm.nih.gov/databases/download/data_distrib_main.html|
+            \item For PPI classification downstream task, \textbf{STRING} dataset
+            was obtained from \verb|string-db.org/cgi/download.pl|
+            \item For SH regression downstream task, \textbf{UniProt in FASTA format}
+            was obtained from \verb|www.uniprot.org/proteomes/*|, where, * is replaced by a 
+            \textit{code} for either \textbf{\textit{yeast}} or for \textbf{\textit{human}}
+            \item For GE regression downstream task, for \textit{yeast}, data was
+            obtained from \textit{supplementary material} of \cite{geneexpryeast} and for
+            \textit{human}, \textbf{GTEx} data was obtained from \verb|www.gtexportal.org|
+        \end{enumerate}
+    
+    \subsection{Pre-training Embeddings}
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.3]{pretrain_embed.png}
+            \caption{Pre-training Embedding}
+            \label{fig:pretrain}
+        \end{figure}
+        In Figure \ref{fig:pretrain}, the overall process for creating the input vectors 
+        for the neural network has been depicted via a \textit{flowchart}. In the figure,
+        the term \verb|SOC| means \textit{Second Order Co-occurrence} (matrix), \verb|PMI|
+        means \textit{Pointwise Mutual Information}, \verb|LSA| means \textit{Latent Semantic Analysis}
+        and \verb|SVD| means \textit{Singular Value Decomposition}.\hfill\newline
+
+        \noindent The purpose of the initialization of the embeddings is to ensure that
+        gene products have good initial representation in the neural network so that meaningful
+        gradients are generated.
+
+    \subsection{Training Model}
+        Whereas, the layers in the \textit{Single Channel} and \textit{Multi Channel}
+        versions have been summarised in the \textit{mindmap} in Figure \ref{fig:mindmap},
+        in this section we will capture the logic of the neural network via the \textit{flowchart}
+        in Figure \ref{fig:network}.
+
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.243]{training_network_mc.png}
+            \caption{Training Model}
+            \label{fig:network}
+        \end{figure}
+
+        \noindent In the Figure \ref{fig:network} the data sources indicate the
+        different downstream tasks that have already been discussed above. The process
+        may be further enumerated with certain more details as follows (\textit{the multi-channel
+        process is described}):
+
+        \begin{enumerate}
+            \item A data source for a particular task is selected, and pairs of 
+            relevant gene-products are selected
+            \item Each gene product may contain multiple GO terms. Further, the 
+            gene terms are different under each sub-ontology (BP, CC and MF). So, 3 sets
+            of GO terms are formed for each gene-product
+            \item The term embeddings are looked-up in the tables formed in the
+            pre-training embedding step, and matrices are formed. When the number of
+            terms are not same, padding of large negative numbers are used
+            \item The first maxpool layer selects the max value from the fixed 100 dimension
+            features for each term and prepares a 1-D vector from the matrix
+        \end{enumerate}
+
+        \noindent The remaining steps are as per the \textit{flowchart}. In case of 
+        the \textbf{Single Channel} version, the channel merge layer is not required.
+        The \textbf{Gene Embedding} can be extracted right before the \textit{gene-pair
+        merge layer}.
+        
+\end{sloppypar*}

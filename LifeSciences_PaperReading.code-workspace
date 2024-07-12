@@ -13,6 +13,7 @@
 				"name": "xelatexmk",
 				"command": "latexmk",
 				"args": [
+					"-shell-escape",
 					"-xelatex",
 					"-outdir=%DIR_W32%",
 					"%DOC_EXT_W32%"

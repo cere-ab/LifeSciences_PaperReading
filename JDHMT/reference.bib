@@ -1,0 +1,53 @@
+@article{JDHMT,
+    title = {High-quality gene/disease embedding in a multi-relational heterogeneous graph after a joint matrix/tensor decomposition},
+    journal = {Journal of Biomedical Informatics},
+    volume = {126},
+    pages = {103973},
+    year = {2022},
+    issn = {1532-0464},
+    doi = {https://doi.org/10.1016/j.jbi.2021.103973},
+    url = {https://www.sciencedirect.com/science/article/pii/S1532046421003026},
+    
+    author = {Kaiyin Zhou and Sheng Zhang and Yuxing Wang and Kevin Bretonnel
+    Cohen and Jin-Dong Kim and Qi Luo and Xinzhi Yao and Xingyu Zhou and Jingbo Xia},
+    
+    keywords = {Heterogeneous data fusion, Tensor decomposition, Gene disease
+    network, Node embedding},
+    
+    abstract = {Motivation Node embedding of biological entity network has been
+    widely investigated for the downstream application scenarios. To embed full
+    semantics of gene and disease, a multi-relational heterogeneous graph is
+    considered in a scenario where uni-relation between gene/disease and other
+    heterogeneous entities are abundant while multi-relation between gene and
+    disease is relatively sparse. After introducing this novel graph format, it
+    is illuminative to design a specific data integration algorithm to fully
+    capture the graph information and bring embeddings with high quality.
+    Results First, a typical multi-relational triple dataset was introduced,
+    which carried significant association between gene and disease. Second, we
+    curated all human genes and diseases in seven mainstream datasets and
+    constructed a large-scale gene-disease network, which compromising 163,024
+    nodes and 25,265,607 edges, and relates to 27,165 genes, 2,665 diseases,
+    15,067 chemicals, 108,023 mutations, 2,363 pathways, and 7.732 phenotypes.
+    Third, we proposed a Joint Decomposition of Heterogeneous Matrix and Tensor
+    (JDHMT) model, which integrated all heterogeneous data resources and obtained
+    embedding for each gene or disease. Forth, a visualized intrinsic evaluation
+    was performed, which investigated the embeddings in terms of interpretable
+    data clustering. Furthermore, an extrinsic evaluation was performed in the form
+    of linking prediction. Both intrinsic and extrinsic evaluation results showed
+    that JDHMT model outperformed other eleven state-of-the-art (SOTA) methods
+    which are under relation-learning, proximity-preserving or message-passing
+    paradigms. Finally, the constructed gene-disease network, embedding results
+    and codes were made available.
+    Data and Codes Availability The constructed massive gene-disease network is
+    available at: https://hzaubionlp.com/heterogeneous-biological-network/. The
+    codes are available at: https://github.com/bionlp-hzau/JDHMT.}
+}
+
+@misc{heteroData,
+    author = "Jingbo Xia",
+    title = "Heterogeneous Biological Network",
+    howpublished = {Available: \url{https://hzaubionlp.com/heterogeneous-biological-network/}},
+    note = "Accessed: 09 July 2024",
+    month = {Apr},
+    year = 2024
+}

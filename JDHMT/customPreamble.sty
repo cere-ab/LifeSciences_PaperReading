@@ -1,0 +1,54 @@
+\usepackage[OT1]{fontenc} 
+\usepackage[margin=0.65in]{geometry}
+\usepackage{indentfirst}
+\usepackage{url}
+\usepackage{tikz,times}
+%\usetikzlibrary{mindmap}
+\usepackage{amsfonts}
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{mybox}{
+enhanced,
+boxrule=0pt,frame hidden,
+borderline west={4pt}{0pt}{blue!65!white},
+colback=blue!5!white,
+rounded corners
+}
+
+\graphicspath{ {images} }
+
+\usepackage{xspace}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings}
+
+\newtcblisting{codebox}{
+  listing only,
+  nobeforeafter,
+  after={\xspace},
+  hbox,
+  tcbox raise base,
+  fontupper=\ttfamily,
+  colback=lightgray,
+  colframe=lightgray,
+  size=fbox
+}
+
+\usepackage[]{markdown}
+\markdownSetup{pipeTables, tableCaptions}
+
+
+\newenvironment{sloppypar*}
+ {\sloppy\ignorespaces}
+ {\par}
+
+% \usepackage{algorithm}
+% \usepackage[noend]{algpseudocode}
+\usepackage[
+  ruled,
+%  lined,
+  linesnumbered,
+%  commentsnumbered,
+  longend
+]{algorithm2e}
+\newcommand\mycommfont[1]{\small\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}

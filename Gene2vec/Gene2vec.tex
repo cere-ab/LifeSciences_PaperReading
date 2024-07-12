@@ -1,0 +1,65 @@
+\documentclass{article}
+%\usepackage[utf8]{inputenc}
+\usepackage{customPreamble}
+
+
+
+\begin{document}
+\begin{sloppypar}
+
+    \begin{center}
+    
+        \Large{Paper Review For Gene2vec} \\
+        \author{}{by Anurag Banerjee}\\
+        
+        \vspace{1em}
+        \LARGE{\textbf{Gene2vec: distributed representation of genes \\ based on co-expression}\cite{gene2vec}} \\
+    	\Large{\textit{Jingcheng Du et. al.}} \\
+     
+    \end{center}
+	
+    \begin{normalsize}
+    
+    	\input{pages/glossary.tex}
+		
+		
+		\section{Problem Description}
+        This paper attempts to figure out, how to represent all human \textbf{gene}s as $n$-dimensional
+		vectors, such that they also capture functional relatedness of the genes.
+		These vectors are to be the \textit{distributed} representation of the genes,
+		in line with word embeddings (as in Natural Language Processing or NLP).
+                
+        \section{Problem Relevance}
+        A naive way to think of a \textbf{gene} is that, it is made up of multiple \textbf{transcript}s; where as all transcripts in the human \textbf{genome} have been identified, the \textbf{functional annotation}s of the gene is \textit{discrete}, \textit{categorical} and through \textit{manual efforts}.\\
+
+		In NLP, a word's vector representation (neural embedding) depends on the co-occurrence of other words in the same sentence. Leveraging this idea, the authors have used \textbf{gene co-expression} as the basis of similarity for obtaining the \textit{\textbf{gene embeddings}}.\\
+
+		Such gene embeddings may be used for multiple downstream tasks such as \textit{finding gene-gene interactions}, clustering the embeddings in some dimensional space to \textit{group genes into some functional group}, etc.
+        
+		\input{pages/solution.tex}
+	   	
+	   	\section{Positive Points}
+	   	\begin{itemize}
+	   	    \item The paper utilizes concepts present in established NLP pipelines to create learned gene embeddings that are shown to be useful in downstream ML tasks.
+	   	\end{itemize}
+	   	
+	   	\section{Negative Points}
+	   	\begin{itemize}
+			\item The description of the embedding generation could have been better
+			\item The data sources may not reflect updated knowledge in the domain
+	   	\end{itemize}
+	   	
+	   	\section{Questions}
+	   	\begin{enumerate}
+	   	    \item The use of micro-array based co-expression info could be outdated - will that affect the embedding generation?
+			\item The actual steps in utilizing the data sources for creation of input data is not clear. What are the steps?
+			\item The exact description of the loss function is slightly dubious. Can it be improved?
+	   	\end{enumerate}
+
+    \end{normalsize}
+    
+    \bibliographystyle{ieeetr}
+    \bibliography{reference}
+  
+\end{sloppypar}
+\end{document}
