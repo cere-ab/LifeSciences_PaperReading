@@ -1,0 +1,35 @@
+\documentclass[a4paper]{article}
+\usepackage{customPreamble}
+
+\begin{document}
+
+    %% Title section
+    \input{pages/title.tex}
+
+    \begin{normalsize}
+    
+    	%% Glossary section
+        \section{Jargon Glossary}
+        \input{pages/glossary.tex}
+		
+        %% Description of the problem statement
+		\section{Problem Description}
+        \input{pages/prob_Desc.tex}
+                
+        %% Context and background of problem, before solution
+        \section{Problem Relevance}
+        \input{pages/prob_Relv.tex}
+
+        %% The solution proposed by the authors
+        \section{Proposed Solution}
+        \input{pages/solution.tex}
+	   	
+        %% The review
+        \input{pages/points_Ques.tex}
+
+    \end{normalsize}
+    
+    \bibliographystyle{ieeetr}
+    \bibliography{reference}
+
+\end{document}

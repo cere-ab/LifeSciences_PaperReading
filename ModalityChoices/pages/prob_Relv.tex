@@ -1,0 +1,27 @@
+\begin{sloppypar*}
+
+    Machine Learning based downstream tasks require that the genes, diseases etc.
+    are represented numerically. \textbf{Representation Learning} converts complex
+    data structures (free text, ontology based annotations) into numeric vectors
+    (or, matrices and tensors) so that ML techniques may consume it. The complex
+    data structures are built from various data sources, such as, \hfill\break
+
+    \begin{tabularx}{\textwidth}{XXX}
+        \textit{occurences in scientific literature} & \textit{CRISPR screens} & \textit{protein sequence} \\
+        \textit{protein-protein interaction network} & \textit{gene expressions} & \textit{gene ontology annotation} \\
+    \end{tabularx} \hfill\break
+    \noindent Sampling Bias, a type of \textit{selection bias}, pertains to
+    over-representation of certain members of a population in some experiment. 
+    In research literature, some genes/diseases are more explored than others.
+    Functional gene embeddings generated from such a literature corpus will contain
+    this type of bias. This results in \textbf{under-performance} of the embeddings
+    on downstream tasks for less studied genes/diseases. The authors have referred
+    to this as \textbf{annotation inequality bias} caused by street-light-effect. \hfill\break
+
+    \noindent In this study, the authors \textit{have not attempted to create any novel
+    solution to the downstream tasks}, but rather, focused on studying the effect
+    of various data sources on such tasks using off-the-shelf ML algorithms. They
+    have, however, proposed an embedding generation scheme that they claim will
+    remove the aforementioned bias.
+
+\end{sloppypar*}

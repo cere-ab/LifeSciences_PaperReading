@@ -1,0 +1,101 @@
+@inproceedings{revGrad,
+    author = {Ganin, Yaroslav and Lempitsky, Victor},
+    title = {Unsupervised domain adaptation by backpropagation},
+    year = {2015},
+    publisher = {JMLR.org},
+    abstract = {Top-performing deep architectures are trained on massive amounts
+                of labeled data. In the absence of labeled data for a certain task,
+                domain adaptation often provides an attractive option given that
+                labeled data of similar nature but from a different domain (e.g.
+                synthetic images) are available. Here, we propose a new approach
+                to domain adaptation in deep architectures that can be trained on
+                large amount of labeled data from the source domain and large amount
+                of unlabeled data from the target domain (no labeled target-domain
+                data is necessary).As the training progresses, the approach promotes
+                the emergence of "deep" features that are (i) discriminative for
+                the main learning task on the source domain and (ii) invariant with
+                respect to the shift between the domains. We show that this adaptation
+                behaviour can be achieved in almost any feed-forward model by augmenting
+                it with few standard layers and a simple new gradient reversal layer.
+                The resulting augmented architecture can be trained using standard
+                back propagation.Overall, the approach can be implemented with little
+                effort using any of the deep-learning packages. The method performs
+                very well in a series of image classification experiments, achieving
+                adaptation effect in the presence of big domain shifts and outperforming
+                previous state-of-the-art on Office datasets.},
+    booktitle = {Proceedings of the 32nd International Conference on International
+                Conference on Machine Learning - Volume 37},
+    pages = {1180–1189},
+    numpages = {10},
+    location = {Lille, France},
+    series = {ICML'15}
+}
+
+@article{modalityChoices,
+    author = {Brechtmann, Felix and Bechtler, Thibault and Londhe, Shubhankar and
+                Mertes, Christian and Gagneur, Julien},
+    title = "{Evaluation of input data modality choices on functional gene embeddings}",
+    journal = {NAR Genomics and Bioinformatics},
+    volume = {5},
+    number = {4},
+    pages = {lqad095},
+    year = {2023},
+    month = {11},
+    abstract = "{Functional gene embeddings, numerical vectors capturing gene function,
+                provide a promising way to integrate functional gene information
+                into machine learning models. These embeddings are learnt by applying
+                self-supervised machine-learning algorithms on various data types
+                including quantitative omics measurements, protein–protein interaction
+                networks and literature. However, downstream evaluations comparing
+                alternative data modalities used to construct functional gene embeddings
+                have been lacking. Here we benchmarked functional gene embeddings
+                obtained from various data modalities for predicting disease-gene
+                lists, cancer drivers, phenotype–gene associations and scores from
+                genome-wide association studies. Off-the-shelf predictors trained
+                on precomputed embeddings matched or outperformed dedicated state-of-the-art
+                predictors, demonstrating their high utility. Embeddings based on
+                literature and protein–protein interactions inferred from low-throughput
+                experiments outperformed embeddings derived from genome-wide experimental
+                data (transcriptomics, deletion screens and protein sequence) when
+                predicting curated gene lists. In contrast, they did not perform
+                better when predicting genome-wide association signals and were biased
+                towards highly-studied genes. These results indicate that embeddings
+                derived from literature and low-throughput experiments appear favourable
+                in many existing benchmarks because they are biased towards well-studied
+                genes and should therefore be considered with caution. Altogether,
+                our study and precomputed embeddings will facilitate the development
+                of machine-learning models in genetics and related fields.}",
+    issn = {2631-9268},
+    doi = {10.1093/nargab/lqad095},
+    url = {https://doi.org/10.1093/nargab/lqad095},
+    eprint = {https://academic.oup.com/nargab/article-pdf/5/4/lqad095/52777187/lqad095.pdf},
+}
+
+@ARTICLE{protTrans,
+    author={Elnaggar, Ahmed and Heinzinger, Michael and Dallago, Christian and Rehawi,
+            Ghalia and Wang, Yu and Jones, Llion and Gibbs, Tom and Feher, Tamas and Angerer,
+            Christoph and Steinegger, Martin and Bhowmik, Debsindhu and Rost, Burkhard},
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+    title={ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning}, 
+    year={2022},
+    volume={44},
+    number={10},
+    issn = {1939-3539},
+    pages={7112-7127},
+    keywords={Proteins;Training;Amino acids;Task analysis;Databases;Computational modeling;
+            Three-dimensional displays;Computational biology;high performance computing;
+            machine learning;language modeling;deep learning},
+    doi={10.1109/TPAMI.2021.3095381},
+    publisher = {IEEE Computer Society},
+    address = {Los Alamitos, CA, USA},
+    month = {oct}
+}
+
+@misc{modalityChoicesCode,
+    author = "Felix Brechtmann",
+    title = "A genome-wide experiment-based functional gene embedding",
+    howpublished = {Available: \url{https://github.com/gagneurlab/gene-embedding/tree/v1.0.0/}},
+    note = "Accessed: 09 August 2024",
+    month = {Apr},
+    year = 2023
+}
