@@ -1,0 +1,31 @@
+\begin{sloppypar*}
+
+    Most \textit{in-silico} methods attempt to leverage the \textit{guilt-by-association}
+    principle wherein new gene-disease associations are predicted considering the
+    functional similarity of the genes to known causative genes. Some of the common
+    methods for this prediction are:
+
+    \begin{tabularx}{\textwidth}{XX}
+        1. \textit{Matrix Decomposition} & 2. \textit{Network Propagation} \\
+        3. \textit{Shallow Machine Learning} & 4. \textit{Graph Embedding} \\
+    \end{tabularx} \hfill\break
+
+    \noindent \textit{Matrix Decomposition} is one of the most common approaches
+    where after decomposing a matrix of known gene-disease association, new
+    associations are recovered by arranging the decompositions for unknown gene-
+    disease pairs. \textit{Network Propagation} relies on PPI graphs and
+    \textit{Shallow ML} methods involve boosted regression trees, again using PPI.
+    \textit{Graph Embedding} approaches are newer, and can incorporate heterogeneous
+    graphs. \hfill\break
+
+    \noindent A heterogenous graph can simultaneously contain nodes of type \textbf{gene},
+    \textbf{disease}, \textit{etc.} and the learning task can be setup directly
+    as a \textit{link prediction} problem, between the genes and diseases.
+
+
+    % \begin{tabularx}{\textwidth}{XXX}
+    %     \textit{occurences in scientific literature} & \textit{CRISPR screens} & \textit{protein sequence} \\
+    %     \textit{protein-protein interaction network} & \textit{gene expressions} & \textit{gene ontology annotation} \\
+    % \end{tabularx} \hfill\break
+    
+\end{sloppypar*}

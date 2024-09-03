@@ -1,0 +1,30 @@
+%% The positive takeaways from the paper
+\section{Positive Points}
+\begin{itemize}
+    \item One of the most straight-forward application of Graph Neural Networks
+        for the task of gene prioritization
+    \item For the most part, the paper is well described
+\end{itemize}
+
+
+%% The negative takeaways from the paper
+\section{Negative Points}
+\begin{itemize}
+    \item The construction of the combined adjacency matrix (Eq. 1 in the paper)
+        follows some logic, however, it is not revealed in the paper
+    \item The candidate gene list is selected from the decoding module, but, the
+        sorting is done based on the DeepWalk scores. Authors do not provide a
+        justification.
+    \item The authors have mentioned that they used \textbf{dropout on Adjacency matrix}
+        as a means to overcome over-fitting of the GCN. This approach doesn't seem
+        right as random edge dropping breaks the domain context.
+\end{itemize}
+
+
+%% The questions that I have of the authors
+\section{Questions}
+\begin{enumerate}
+    \item The cluster loss uses a threshold; apparently it is based on distance
+        but, how is it selected?
+    \item How is the threshold during gene prioritization selected?
+\end{enumerate}
